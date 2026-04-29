@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "network-analyzer"
+version = "0.1.0"
+description = "Analyseur reseau Linux avec detection d'attaques et rapport PDF"
+authors = ["sabri <sabri@example.com>"]
+readme = "README.md"
+packages = [{ include = "tp1", from = "src" }, { include = "tp2", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scapy = "^2.5"
+reportlab = "^4.0"
+matplotlib = "^3.8"
+capstone = "^5.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-cov = "^5.0"
+black = "^24.0"
+ruff = "^0.4"
+pre-commit = "^3.7"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "D"]
+ignore = ["D203", "D213"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.poetry.scripts]
+tp2 = "tp2.main:cli"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
