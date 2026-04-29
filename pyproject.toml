@@ -2,7 +2,7 @@
 name = "network-analyzer"
 version = "0.1.0"
 description = "Analyseur reseau Linux avec detection d'attaques et rapport PDF"
-authors = ["sabri <sabri@example.com>"]
+authors = ["sabri <binoulll@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "tp1", from = "src" }, { include = "tp2", from = "src" }]
 
